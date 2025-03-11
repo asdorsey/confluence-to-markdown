@@ -3,31 +3,43 @@
 Convert [Confluence HTML export](#conflhowto) to Markdown
 
 
-## Requirements
+## Docker
+A Dockerfile has been provided for ease of use.
+```bash
+docker build -t confluence-to-markdown:local .
+```
+
+### Usage
+```bash
+docker run --rm -it -v ~/path/to/source/directory:/source -v ~/path/to/target/directory:/target confluence-to-markdown:local
+```
+
+## Manual
+
+### Requirements
 
 You must have [pandoc] command line tool installed. Check it by running:
 
-```
+```bash
 pandoc --version
 ```
 
 Install all project dependencies:
 
-```
+```bash
 npm install
 ```
 
 
-## Usage
-
+### Usage
 In the converter's directory:
 
-```
+```bash
 npm run start <pathResource> <pathResult>
 ```
 
 
-### Parameters
+#### Parameters
 
 parameter | description
 --- | ---
